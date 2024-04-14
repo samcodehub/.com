@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VP3VDZGZEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VP3VDZGZEM');
+</script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explore the power of Python BeautifulSoup (bs4) with this comprehensive guide. Learn how to use BeautifulSoup for web scraping, scrape weather updates, extract Instagram user data, and build a Python weather app with a graphical user interface (GUI). Follow step-by-step instructions, explore practical examples, and enhance your skills in web scraping, data extraction, and GUI development with Python.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="bs4.css" />
+    <link rel="icon" type="image/x-icon" href="../IMG/s.png">
+    <title>Python BeautifulSoup (bs4): Web Scraping and GUI App Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <script src="https://kit.fontawesome.com/e517e55e99.js" crossorigin="anonymous"></script>
+    
+<!-- Meta Tags for Social Sharing -->
+<meta property="og:title" content="Python BeautifulSoup (bs4): Web Scraping and GUI App Guide">
+<meta property="og:description" content="Explore the power of Python BeautifulSoup (bs4) with this comprehensive guide. Learn how to use BeautifulSoup for web scraping, scrape weather updates, extract Instagram user data, and build a Python weather app with a graphical user interface (GUI). Follow step-by-step instructions, explore practical examples, and enhance your skills in web scraping, data extraction, and GUI development with Python.">
+<meta property="og:image" content="https://www.samcodehub.com/IMG/s.png">
+<meta property="og:url" content="https://samcodehub.com/BS4/bs4.html">
+<meta name="twitter:title" content="Python BeautifulSoup (bs4): Web Scraping and GUI App Guide">
+<meta name="twitter:description" content="Explore the power of Python BeautifulSoup (bs4) with this comprehensive guide. Learn how to use BeautifulSoup for web scraping, scrape weather updates, extract Instagram user data, and build a Python weather app with a graphical user interface (GUI). Follow step-by-step instructions, explore practical examples, and enhance your skills in web scraping, data extraction, and GUI development with Python.">
+<meta name="twitter:image" content="https://www.samcodehub.com/IMG/s.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://samcodehub.com/BS4/bs4.html">
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("EPqtEwgLtyLECUuik");
+      })();
+    </script>
+</head>
+<body>
+<!--HEADER-->
+<nav class="navbar sticky-top">
+  <div class="container-fluid">
+    <button class="nav-btn open-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav nav-black">
+      <div class="nav nav-purple">
+        <div class="nav nav-white">
+          <button class="nav-btn close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="list">
+            <li><a class="hover-underline-animation" href="../main.html">Home</a></li>
+            <li><a class="hover-underline-animation" href="https://www.youtube.com/channel/UCMxVrec-3iTMxiEAsxTtZJg" target="_blank">YouTube Channel</a></li>
+            <li>Contacts:</li>
+            <li>
+              <ul>
+                <li><a class="hover-underline-animation" href="https://twitter.com/SamCodehub" target="_blank">Twitter</a></li>
+                <li><a class="hover-underline-animation" href="https://www.instagram.com/samcodehub/" target="_blank">Instagram</a></li>
+                <li><a class="hover-underline-animation" href="https://www.tiktok.com/@samcodehub" target="_blank">Tiktok</a></li>
+                <li><a class="hover-underline-animation" href="mailto:samcodehub@gmail.com">Mail</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <a class="navbar-brand text-white ms-5" href="../main.html">SAMCODEHUB</a>
+    </div>
+</nav>
+
+
+  
+<div class="container-fluid text-dark bg-light mb-5">
+    <div class="container text-break">
+      <div class="row">
+        <div class="mt-3 text-center d-none d-sm-block">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '1b2faf8c56912cbb33c75a4f2c4147a0',
+              'format' : 'iframe',
+              'height' : 90,
+              'width' : 728,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/1b2faf8c56912cbb33c75a4f2c4147a0/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+        
+  
+  
+        <div class="mt-3 text-center d-block d-sm-none">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '5f8d3ca7e2522cae1c98e57ae1a52fc4',
+              'format' : 'iframe',
+              'height' : 50,
+              'width' : 320,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/5f8d3ca7e2522cae1c98e57ae1a52fc4/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+
+        <div class="col-9 ">
+                  <h1 class="mt-3">What is BeautifulSoup(bs4) in Python & How to Use it for Web Scraping</h1>
+                    <p class="mt-5"><strong>BeautifulSoup</strong> (usually abbreviated as bs4) is a popular <strong>Python</strong> library used for <strong>web scraping</strong> and <strong>parsing HTML</strong> and <strong>XML</strong> documents. It is named after the popular song "Beautiful Soup" from the Lewis Carroll novel "Alice's Adventures in Wonderland".</p>
+                    <p class="mt-4">The library allows you to extract specific parts of a webpage's <strong>HTML code</strong> and <strong>parse</strong> them into a format that can be easily manipulated in <strong>Python</strong>. This makes it useful for <strong>data mining</strong>, <strong>web scraping</strong>, and other applications that require the extraction of data from web pages.</p>
+                    <p class="mt-4"><strong>BeautifulSoup</strong> can handle poorly formatted <strong>HTML code</strong> and can <strong>parse XML</strong> documents as well. It provides various parsing options, such as <strong>HTML parsing</strong>, <strong>XML parsing</strong>, and parsing based on <strong>regular expressions</strong>.</p>
+                    <p class="mt-4">Overall, <strong>Beautiful Soup</strong> is a powerful and widely used library for <strong>web scraping</strong> and <strong>parsing</strong> in <strong>Python</strong>.</p>
+
+                    <div class="ad-container mt-5" style="display:block; text-align:center;">
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BHZQGN26&asins=B0BHZQGN26&linkId=4f52a010e7d62446feab3aa053ee8d11&show_border=true&link_opens_in_new_window=true"></iframe>
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BJV16HC6&asins=B0BJV16HC6&linkId=94395c8132a23e64cc112aa2306d632b&show_border=true&link_opens_in_new_window=true"></iframe>
+
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BQMPFD67&asins=B0BQMPFD67&linkId=9c59ba16159b98e118ba54389175df86&show_border=true&link_opens_in_new_window=true"></iframe>
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B07YD5TK4F&asins=B07YD5TK4F&linkId=6a32127d77aa1a109b20f19769195148&show_border=true&link_opens_in_new_window=true"></iframe>
+                    </div>
+                    
+                    <h2 class="mt-5">Step-by-Step Guide: How to Install and Use BeautifulSoup in Python</h2>
+
+                    <p class="mt-5">To install <strong>Beautiful Soup</strong> in <strong>Python</strong>, you can use <strong>pip</strong>, which is the package installer for <strong>Python</strong>. Here are the steps to install and use <strong>BeautifulSoup</strong> in <strong>Python</strong>:</p>
+                    <ol class="mt-4">
+                      <li class="mt-3">Open your command prompt or terminal.</li>
+                      <li class="mt-3">Enter the following command to install <strong>Beautiful Soup</strong>:</li>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">pip install beautifulsoup4                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+                     
+                      <li class="mt-3">Once <strong>Beautiful Soup</strong> is installed, you can import it into your <strong>Python code</strong> by adding the following line:</li>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">from bs4 import BeautifulSoup                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+                     
+                      <li class="mt-3">To use <strong>Beautiful Soup</strong> to <strong>parse an HTML document</strong>, you first need to obtain the <strong>HTML document</strong>. You can either obtain the HTML document from a <strong>URL</strong> using Python's <mark><strong>'requests'</strong></mark> library or by reading a local HTML file.</li>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import requests
+from bs4 import BeautifulSoup
+  
+url = 'https://www.example.com'
+response = requests.get(url)
+html_doc = response.text
+  
+soup = BeautifulSoup(html_doc, 'html.parser')
+  
+# Now you can use Beautiful Soup to extract data from the HTML document                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+                   
+                  </ol>
+
+
+                    <p class="mt-4">Here is an example code snippet that shows how to use <strong>Beautiful Soup</strong> to parse an HTML document:</p>
+                    <p class="mt-4">In this example, we use the <mark><strong>'requests'</strong></mark> library to obtain the HTML document from a <strong>URL</strong>, and then we use <strong>Beautiful Soup</strong> to parse the <strong>HTML document</strong>. Finally, we can use <strong>Beautiful Soup</strong> to extract data from the <strong>HTML document</strong>.</p>
+                    <div class="ad-container mt-5" style="display:block; text-align:center;">
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BQ6SYQWL&asins=B0BQ6SYQWL&linkId=35d75d306fdeab5fd67df7989db588e6&show_border=true&link_opens_in_new_window=true"></iframe>
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B09Z5ZNJNP&asins=B09Z5ZNJNP&linkId=0b8468bc262ff6644df16d49be6d5c0b&show_border=true&link_opens_in_new_window=true"></iframe>
+
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0B3XKLN9S&asins=B0B3XKLN9S&linkId=50e03f9a07ee0661683f592af217239e&show_border=true&link_opens_in_new_window=true"></iframe>
+
+
+                      <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B08S5CV7FS&asins=B08S5CV7FS&linkId=107dd6880ec63976903d294534035921&show_border=true&link_opens_in_new_window=true"></iframe>
+                    </div>
+                    
+<!--Weather Updates By Python BS4--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2@@-->
+<h2 class="mt-5">Python Weather Updates: Scraping Data with Beautiful Soup and Requests Module</h2>
+<p class="mt-5">"Learn how to use <strong>Python's Beautiful Soup</strong> and <strong>Requests</strong> modules to <strong>scrape weather data</strong> from Google and retrieve real-time temperature updates for any location. Follow our step-by-step guide to <strong>web scraping</strong> and gain valuable insights into data manipulation with <strong>Python</strong>."</p>
+<p class="mt-3">Here's what does every line of the code:</p>
+<p class="mt-5">This line imports the <strong>requests</strong> library, which is a Python module used to send <strong>HTTP</strong> requests to websites and retrieve their responses.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import requests
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">This line imports the <strong>BeautifulSoup</strong> class from the bs4 module, which is a popular library for parsing <strong>HTML</strong> and <strong>XML</strong> documents.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">from bs4 import BeautifulSoup
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This line creates a string variable called <strong>search</strong> with the value "Weather in London".</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">search = 'Weather in London'
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<div class="mt-5 text-center">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '2be6d81d479aab6f66c74305d58a3261',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/2be6d81d479aab6f66c74305d58a3261/invoke.js"></scr' + 'ipt>');
+  </script>
+</div>
+
+<p class="mt-5">This line creates a string variable called <strong>url</strong> that contains a Google search URL with the search string interpolated into the query parameter. In this case, the resulting URL will be "https://www.google.com/search?&q=Weather in London".</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">url = f"https://www.google.com/search?&q={search}"
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">This line sends an <strong>HTTP GET</strong> request to the <strong>URL</strong> stored in url using the <strong>get()</strong> function of the <strong>requests</strong> module. The response is stored in a variable called <strong>r</strong>.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">r = requests.get(url)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">This line creates a <strong>BeautifulSoup object</strong> called <strong>soup</strong> that parses the <strong>HTML</strong> content of the response stored in <strong>r.text</strong> using the <strong>'html.parser'</strong> parser.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">soup = BeautifulSoup(r.text, 'html.parser')
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">This line finds the first div element in soup with the class <strong>'BNeawe'</strong> and stores it in a variable called <strong>temp</strong>.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">temp = soup.find("div", class_='BNeawe')
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">This line prints the text content of the temp element to the console.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">print(temp.text)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">Overall, this code retrieves the current weather in London by sending a search query to Google and parsing the resulting HTML to find the relevant information. It demonstrates how the <strong>requests</strong> and <strong>BeautifulSoup</strong> libraries can be used together to automate <strong>web scraping</strong> tasks.</p>
+
+
+
+<h4 class="mt-5">You can watch the video below:</h4>
+<div class="ratio ratio-16x9 mt-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FF_BzMgi0Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="ad-container mt-5" style="display:block; text-align:center;">
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B08GHX9G5L&asins=B08GHX9G5L&linkId=4f9906ef49caf24a9775bdc870ccb72f&show_border=true&link_opens_in_new_window=true"></iframe>
+
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B09SBRB59Z&asins=B09SBRB59Z&linkId=5421fa92dc26e9176659d03fc56be5bf&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B01CW4CR4I&asins=B01CW4CR4I&linkId=3c9604243a1161190abe5cab09bcee8f&show_border=true&link_opens_in_new_window=true"></iframe>
+
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0C1NX9H4X&asins=B0C1NX9H4X&linkId=2306687316c96ee43e8b4c01ad96fdac&show_border=true&link_opens_in_new_window=true"></iframe>
+</div>
+
+<!-- Scraping Instagram User Name ################################################################### -->
+<h2 class="mt-5">Python Script for Scraping Instagram User Data with BS4: Followers, Followings, Posts</h2>
+<p class="mt-5">"Learn how to use <strong>Python</strong> and <strong>bs4</strong> to scrape Instagram user data, including followers, followings, and posts. Our step-by-step guide will show you how to extract valuable insights from social media with the power of <strong>web scraping</strong> and <strong>data manipulation</strong>."</p>
+<p class="mt-4">This code uses the <strong>requests</strong> and <strong>BeautifulSoup</strong> libraries to scrape data from an Instagram profile. Here's a breakdown of what each line of code does:</p>
+
+<p class="mt-5">imports the <strong>requests</strong> library, which is used to send <strong>HTTP requests</strong> and receive responses,
+and the <strong>BeautifulSoup</strong> class from the <strong>bs4</strong> library, which is used to parse HTML and XML documents.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import requests
+from bs4 import BeautifulSoup
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This sets the <strong>URL</strong> of the Instagram profile to be scraped. The <strong>{}</strong> is a placeholder for the username, which will be inserted later.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">url = 'https://www.instagram.com/{}/'
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<div class="mt-5">
+  <script async="async" data-cfasync="false" src="//pl19803482.highrevenuegate.com/48f614a090a4554e6545c45cb2bade8a/invoke.js"></script>
+<div id="container-48f614a090a4554e6545c45cb2bade8a"></div>
+</div>
+
+<p class="mt-5">This defines a function <strong>parse_data()</strong> that takes a string s as input.</p>
+
+<p class="mt-4"><strong>data={}</strong> initializes an empty dictionary data that will be used to store the scraped data. <strong>s= s.split("-")[0]</strong> splits the input string <strong>s</strong> on the "-" character and takes the first element of the resulting list. <strong>s= s.split(" ")</strong> splits the input string <strong>s</strong> on the " " (space) character and returns a list of substrings.</p>
+<p class="mt-4"><strong>data['Followers']= s[0]</strong> assigns the first element of the s list to the <strong>'Followers'</strong> key of the data dictionary. <strong>data['Following']= s[2]</strong> assigns the third element of the s list to the <strong>'Following'</strong> key of the data dictionary. <strong>data['Post']= s[4]</strong> assigns the fifth element of the s list to the <strong>'Post'</strong> key of the data dictionary.</p>
+<p class="mt-4"><strong>return data:</strong> returns the data dictionary from the <strong>parse_data()</strong> function.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">def parse_data(s):
+    data={}
+    s= s.split("-")[0]
+    s= s.plit(" ")
+    
+    data['Followers']= s[0]
+    data['Following']= s[2]
+    data['Post']= s[4]
+    
+    return data
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This defines a function <strong>scrape_data()</strong> that takes a username as input. <br/> <strong>r = requests.get(url.format(username))</strong> sends a GET request to the Instagram profile URL with the username inserted in the <strong>URL</strong>. <br/><strong>s = BeautifulSoup(r.text, "html.parser")</strong> creates a BeautifulSoup object <strong>s</strong> from the HTML content of the response <strong>r</strong>.</p> 
+
+<p class="mt-4"><strong>meta = s.find("meta", property="og:description")</strong> finds the meta tag in the HTML content that contains the profile information.</p>
+
+<p class="mt-4"><strong>return parse_data(meta.attrs['content']):</strong> calls the <strong>parse_data()</strong> function with the content attribute of the <strong>meta</strong> tag as input, and returns the resulting dictionary.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">def scrape_data(username):
+    r = requests.get(url.format(username))
+    
+    s = BeautifulSoup(r.text, "html.parser")
+    
+    meta = s.find("meta", property="og:description")
+    
+    return parse_data(meta.attrs['content'])
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<div class="mt-5 text-center">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '2be6d81d479aab6f66c74305d58a3261',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/2be6d81d479aab6f66c74305d58a3261/invoke.js"></scr' + 'ipt>');
+  </script>
+</div>
+
+<p class="mt-5"><strong>if __name__=="__main__":</strong> checks if the script is being run as the main program.<br/>
+<strong>username = "@cristiano"</strong> sets the username variable to the desired Instagram username.<br/>
+<strong>data = scrape_data(username)</strong> calls the <strong>scrape_data()</strong> function with the username as input, and stores the resulting dictionary in the <strong>data</strong> variable.<br/>
+<strong>print(data)</strong> prints the data dictionary to the console, which will display the scraped profile information.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">if __name__=="__main__":
+    username = "@cristiano"
+    
+    data = scrape_data(username)
+    
+    print(data)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">Overall, this code demonstrates how to use <strong>requests</strong> and <strong>BeautifulSoup</strong> to scrape data from an Instagram profile, and how to parse the scraped HTML content to extract the desired information.</p>
+
+
+
+<h4 class="mt-5">You can watch the video below:</h4>
+<div class="ratio ratio-16x9 mt-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cu9S1Dj8p24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="mt-5 text-center">
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BXCCJRJH&asins=B0BXCCJRJH&linkId=34bd4edf9fc203308183ab77b06cc69d&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B083MZSVFM&asins=B083MZSVFM&linkId=a525e4674f516773a4875937f340f686&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B09PNC34C8&asins=B09PNC34C8&linkId=97162f3d173a04a572122a3d55010a79&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B09SCSKV1R&asins=B09SCSKV1R&linkId=f0734bbd30c243be5f85b15a41b1246a&show_border=true&link_opens_in_new_window=true"></iframe>
+
+</div>
+
+
+
+<!--WEATHER-GUI-APP-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<h2 class=" mt-5">Python Weather App with GUI: Building with Tkinter, PIL, BeautifulSoup, and Requests</h2>
+<p class="mt-5">"Learn how to <strong>build a weather app</strong> with a graphical user interface using <strong>Python</strong> and popular libraries like <strong>Tkinter</strong>, <strong>PIL</strong>, <strong>BeautifulSoup</strong>, and <strong>Requests</strong>. Follow our step-by-step guide and discover how to create a customized app that retrieves weather data in real-time and delivers it to your users."</p>
+<p class="mt-4">This code is a <strong>Python script</strong> that creates a graphical user interface (<strong>GUI</strong>) application using the <strong>tkinter</strong> module. The application is a <strong>weather app</strong> that allows the user to enter a city name and displays the current weather information for that city. Here's a breakdown of the code:</p>
+
+<p class="mt-5">This section imports the necessary libraries for the code. <strong>Tkinter</strong> is the standard Python library for creating graphical user interfaces. <strong>PIL</strong> (Python Imaging Library) is a library for working with images. <strong>Beautiful Soup</strong> is a library for web scraping HTML and XML files. The <strong>requests</strong> library allows us to make HTTP requests to websites. <strong>Threading</strong> is a library that allows us to run the code concurrently in separate threads.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import tkinter as tk
+from tkinter import ttk
+from PIL import Image
+from bs4 import BeautifulSoup
+import requests, threading
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This line sets the <strong>headers</strong> for the <strong>HTTP request</strong> to the Google website. The user agent is set to <strong>mimic</strong> the behavior of Google Chrome.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python"># if user agent not work search on chrome my user agent otherwise update chrome
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+<div class="mt-5 text-center">
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B08FC6QLKN&asins=B08FC6QLKN&linkId=3cf209249f1890aed5f3c72cab20b1f6&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B09B5CTHTC&asins=B09B5CTHTC&linkId=2e02d423ffc7f8986b4dfac6ea46b718&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0B973VCZX&asins=B0B973VCZX&linkId=4cfba49c0e43bd0de10d2cb114ec5529&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B096VRK6J5&asins=B096VRK6J5&linkId=80355fcdac4300c25fecc8cddc7e47aa&show_border=true&link_opens_in_new_window=true"></iframe>
+</div>
+
+
+<p class="mt-5">This section defines a function called "<strong>Weather</strong>" that takes in an arbitrary number of arguments. "<strong>city</strong>" is a <strong>global</strong> variable that is used to store the name of the city that the user enters. The function takes the city name and concatenates it with the word "<strong>weather</strong>" to create a search query. Any spaces in the query are replaced with the plus symbol to make it a valid <strong>URL</strong>.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">def Weather(*args):
+    global city
+    city1 = city.get() + " weather"
+    city1 = city1.replace(" ", "+")
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This line sets the text of a label widget to show that the program is searching for the weather information for the specified city.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">search_label['text'] = "Searching For "+city.get()
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">This line makes an <strong>HTTP GET request</strong> to the Google website with the search query for the weather information. The <strong>headers</strong> that were set earlier are used for the <strong>request</strong>.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">res = requests.get(f'https://www.google.com/search?q={city1}&oq={city1}&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid=chrome&ie=UTF-8', headers=headers)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">These lines use the <strong>Beautiful Soup</strong> library to parse the <strong>HTML response</strong> from the Google website. The "<strong>.select()</strong>" method is used to select the elements with the specified <strong>IDs</strong>. The text of each element is extracted and stripped of any leading or trailing spaces.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">soup = BeautifulSoup(res.text, 'html.parser')
+    location = soup.select('#wob_loc')[0].getText().strip()
+    # print(soup.select('#wob_dts'))
+    time = soup.select('#wob_dts')[0].getText().strip()
+    info = soup.select('#wob_dc')[0].getText().strip()
+    weather = soup.select('#wob_tm')[0].getText().strip()
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<div class="mt-5 text-center">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '2be6d81d479aab6f66c74305d58a3261',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/2be6d81d479aab6f66c74305d58a3261/invoke.js"></scr' + 'ipt>');
+  </script>
+</div>
+
+<p class="mt-5">These lines create label widgets that show the location, weather information, and temperature in Celsius.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">    tk.Label(root, text=location, font='Caveat 12 bold', bg="#2E2E2E", fg='#fff').place(x=130, y=250)
+    tk.Label(root, text=info, font='ROBOTO 15 bold', bg="#2E2E2E", fg='#fff').place(x=130, y=220)
+    tk.Label(root, text=f'{weather}°C', font='ROBOTO 35 bold', bg="#2E2E2E", fg='#fff').place(x=5, y=220)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">These lines split the current time into hours and minutes using the <strong>split()</strong> method, and then display the hour and minute on the tkinter window as two separate labels with different font sizes and colors.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">    time = time.split(',')
+    tk.Label(root, text=time[0], font='Caveat 20 bold', bg="#33FFDD", fg='#2E2E2E').place(x=330, y=210)
+    tk.Label(root, text=time[1].upper(), font='ROBOTO 15 bold', bg="#33FFDD", fg='#2E2E2E').place(x=325, y=240)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">These lines clear the search label and the entry box when the <strong>call_function()</strong> function is called.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">    search_label['text'] = ""
+    entry.delete('0', tk.END)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+
+<p class="mt-5">This function is called when the user clicks the "<strong>Check</strong>" button or presses the "<strong>Enter</strong>" key after entering a city name. It creates a new thread that runs the <strong>Weather()</strong> function, which fetches the weather data for the entered city and displays it on the tkinter window.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">def call_function(*args):
+    T = threading.Thread(target=Weather, daemon=True)
+    T.start()
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">These lines create the main tkinter window with a fixed size, a title, and an icon.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python"># making tkinter window
+root = tk.Tk()
+root.geometry("450x300")
+root.title('Weather App SamCodeHub')
+root.resizable(False, False)
+# this is our app icon 
+root.iconbitmap('cloudy.ico')
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+<p class="mt-5">These lines create three different <strong>frames</strong> with different colors to display different content on the tkinter window.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python"># set frames for show different content and color in window
+frame1 = tk.Frame(root, bg='#fff', width=450, height=200)
+frame1.place(x=0, y=0)
+
+frame2 = tk.Frame(root, bg='#2E2E2E', width=300, height=100)
+frame2.place(x=0, y=200)
+
+frame3 = tk.Frame(root, bg='#33FFDD', width=150, height=100)
+frame3.place(x=300, y=200)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<div class="mt-5 text-center">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '2be6d81d479aab6f66c74305d58a3261',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/2be6d81d479aab6f66c74305d58a3261/invoke.js"></scr' + 'ipt>');
+  </script>
+</div>
+
+<p class="mt-5">These lines create an entry box for the user to enter the city name, a "<strong>Check</strong>" button to fetch the weather data, and a <strong>label</strong> to display any errors or messages. The <strong>textvariable</strong> parameter of the entry box is set to a <strong>StringVar()</strong> variable called <strong>city</strong>, which is used to store the entered city name. When the "<strong>Check</strong>" button is clicked or the "<strong>Enter</strong>" key is pressed, the <strong>call_function()</strong> function is called. The <strong>label</strong> is initially empty but can be used to display</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python"># weather details
+global city
+city = tk.StringVar()
+
+# make entry box take city name
+tk.Label(root,  text="Enter the City Name", font=("Arial Rounded MT Bold", 12), bg="#fff").place(x=150, y=40)
+entry = tk.Entry(root, textvariable=city,font=("Arial",13),bd=2,justify=tk.CENTER,relief=tk.GROOVE, width=18, bg='#D0FFBC')
+entry.bind("<Return>",call_function)
+entry.place(x=130, y=85)
+
+tk.Button(root, text='Check', font=("Arial Rounded MT Bold", 10),bd=2,relief=tk.GROOVE, bg="#D0FFBC", command=call_function).place(x = 300, y=85)
+
+search_label = tk.Label(root,  text="", font=("Sitka Small", 12), fg="#24292F",bg='#fff')
+search_label.place(x=140, y=130)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-5">it tells Tkinter to start running the application and it continues running until the window is closed by the user.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">root.mainloop()
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+<p class="mt-3">Overall, this code is a simple <strong>Python program</strong> that creates a graphical user interface (<strong>GUI</strong>) for a <strong>weather checking app</strong> using the <strong>Tkinter</strong> library. The app allows users to enter the name of a city, which is then used to scrape the Google search page for the current weather details of the city using <strong>BeautifulSoup</strong> and <strong>Requests</strong> libraries. The weather details are then displayed in the <strong>GUI</strong>. The program also uses <strong>threading</strong> to run the <strong>weather scraping process</strong> in the background, preventing the app from freezing or becoming unresponsive.</p>
+
+<h4 class="mt-5">You can watch the video below:</h4>
+<div class="ratio ratio-16x9 mt-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Nrors3rnoJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
+<div class="mt-5">
+  <script async="async" data-cfasync="false" src="//pl19803483.highrevenuegate.com/6e23a23963bb7aab641dba5ed180d8b6/invoke.js"></script>
+<div id="container-6e23a23963bb7aab641dba5ed180d8b6"></div>
+</div>
+<!----------------- Comments...-------------- -->
+
+
+<div class="site-update alert-info mt-5 py-3 px-3" role="alert">
+  <h4 class="alert-heading">Site Update in Progress...</h4>
+  <p>We're working hard to keep our site up to date with the latest information. Please check back soon for new and improved content!</p>
+</div>
+<h3 class="mt-5">Comments...</h3>
+<div class="comment mt-3 px-3 py-3">
+  
+  <form id="contactForm"  onsubmit="return sendMail();">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="messageTextarea" class="form-label">Your Comments</label>
+      <textarea class="form-control" name="message"  id="message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class=" mt-4" id="messages">
+                  </div>
+</div>
+
+<!----------------- Comments ENDS HERE...-------------- -->
+
+
+
+        
+      </div>
+      <div id="ads" class="col-3 mt-5 d-none d-sm-block text-break border-start">
+        <div class="text-center  ">
+          <a href=""><img alt="banner" src="https://landings-cdn.adsterratech.com/referralBanners/gif/160x600_adsterra_reff.gif" /></a>
+        </div>
+                 
+        
+        <div class="text-center mt-5 mb-5">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '6e0edb924a4d1f796c691953555afee5',
+              'format' : 'iframe',
+              'height' : 300,
+              'width' : 160,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/6e0edb924a4d1f796c691953555afee5/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+        
+        <div class="text-center mt-5 mb-5">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '60d187c01f46598efa9231f38aa5470f',
+              'format' : 'iframe',
+              'height' : 600,
+              'width' : 160,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/60d187c01f46598efa9231f38aa5470f/invoke.js"></scr' + 'ipt>');
+          </script>
+        
+        </div>
+
+        <div class="text-center mt-5 mb-5">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '6e0edb924a4d1f796c691953555afee5',
+              'format' : 'iframe',
+              'height' : 300,
+              'width' : 160,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/6e0edb924a4d1f796c691953555afee5/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+        
+        <script async="async" data-cfasync="false" src="//pl19803213.highrevenuegate.com/09dd4590666c6548bca106c3143299ba/invoke.js"></script>
+        <div id="container-09dd4590666c6548bca106c3143299ba"></div>
+        
+        <a class="right-ads mt-3" style="display:block; text-align:center;" href="https://www.amazon.com/Python-Crash-Course-Eric-Matthes/dp/1718502702?crid=3TKKGN1CLA9CL&keywords=programming&qid=1683933098&sprefix=programming%2Caps%2C519&sr=8-8&linkCode=li3&tag=samcodehub-20&linkId=cc436c541da1c7eb8d671425382c3848&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1718502702&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=1718502702" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Python Crash Course is the world’s bestselling programming book, with over 1,500,000 copies sold to date!</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+        
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/178995648X?psc=1&pd_rd_i=178995648X&pd_rd_w=tBar5&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=6GPEXPJGD85AQ3FJQVC0&pd_rd_wg=PrLev&pd_rd_r=009dc4ca-d4e2-4b67-9707-fd050817cbf8&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&linkCode=li3&tag=samcodehub-20&linkId=d4e9e934bcd4de6058320b91a2aab499&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=178995648X&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=178995648X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Network Automation Cookbook: Proven and actionable recipes to automate and manage network devices using Ansible</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BK999X36?psc=1&pd_rd_i=B0BK999X36&pd_rd_w=jZMlt&content-id=amzn1.sym.7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_p=7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_r=BSP7869TGPGV1RF0Z0BH&pd_rd_wg=8moWE&pd_rd_r=915368f1-83a3-4cc5-ab1c-403beaeca2ba&s=photo&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE1WU1RWjk1VldHSzQmZW5jcnlwdGVkSWQ9QTA3MTgxNTkxT1NZM1lBS1Y0UUNXJmVuY3J5cHRlZEFkSWQ9QTA1NTIyMjIyUDgzWDE0V1YzR0VJJndpZGdldE5hbWU9c3BfZGV0YWlsX3RoZW1hdGljJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ%3D%3D&linkCode=li2&tag=samcodehub-20&linkId=303a983994f5fdc09e9aebd8f20f9b38&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BK999X36&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BK999X36" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">USB C Webcam,4K Web cam with Microphone, AI Auto-Framing, Privacy Cover, 90° FOV, White Balance, Noise-Reduce, Plug & Play, 4K Web Camera for Streaming/Online Education/Video Calls/Conference</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Getting-Started-Beautiful-Soup-Vineeth/dp/1783289554?crid=11LV91E3OZ3M4&keywords=beautiful+soup+python&qid=1684188645&sprefix=beautifulsoup%2Caps%2C329&sr=8-1&linkCode=li3&tag=samcodehub-20&linkId=3f13b1e4c23778e59793b596ae503abb&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1783289554&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=1783289554" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Getting Started with Beautiful Soup is a practical guide to Beautiful Soup using Python. The book starts by walking you through the installation of each and every feature of Beautiful Soup using simple examples which include sample Python codes as well as diagrams and screenshots wherever required for better understanding.</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+      
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Web-Scraping-Python-Collecting-Modern/dp/1491985577?pd_rd_w=G1jEK&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=VP7MXN40DEAW0BKV721G&pd_rd_wg=I0dml&pd_rd_r=438f0b8f-aefb-4d40-a472-c3e665b7b80d&pd_rd_i=1491985577&psc=1&linkCode=li3&tag=samcodehub-20&linkId=e915a595158feef96be67c69ec70090d&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1491985577&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=1491985577" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Web Scraping with Python: Collecting More Data from the Modern Web 2nd Edition</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+     
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Python-Web-Scraping-Efficace-Ma%C3%AEtriser-ebook/dp/B0C3JDK5QF?crid=11LV91E3OZ3M4&keywords=beautiful+soup+python&qid=1684188645&sprefix=beautifulsoup%2Caps%2C329&sr=8-4&linkCode=li3&tag=samcodehub-20&linkId=4ed526d228857d79a0518ef0119828a2&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0C3JDK5QF&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B0C3JDK5QF" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Python Web Scraping Efficace: Maîtriser Beautiful Soup et Python pour Extraire des Données - Le guide complet pour collecter et analyser des données en ligne de manière éthique</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+        
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Hands-Web-Scraping-Python-operations/dp/1789533392?pd_rd_w=RG2zk&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=33XEQZ9ZYP3A38CA0YZM&pd_rd_wg=mflZ3&pd_rd_r=8dac35fd-9497-44c4-8188-d3ea1f0d9263&pd_rd_i=1789533392&psc=1&linkCode=li3&tag=samcodehub-20&linkId=ddef0891996db75796df03da3835f47b&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1789533392&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=1789533392" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Hands-On Web Scraping with Python: Perform advanced scraping operations using various Python libraries and tools such as Selenium, Regex, and others</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+    
+       
+       
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/IVY-TWS-Smart-Glasses-Compatible/dp/B09N6ZL76Q?pd_rd_w=VCfaV&content-id=amzn1.sym.f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_p=f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_r=33XEQZ9ZYP3A38CA0YZM&pd_rd_wg=Cjetc&pd_rd_r=cb0a1d75-6561-4db1-a8cb-956513551227&pd_rd_i=B09N6ZL76Q&th=1&linkCode=li2&tag=samcodehub-20&linkId=d0db7a905b11a283f1e4dca13783d527&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09N6ZL76Q&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B09N6ZL76Q" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">IVY TWS Smart Glasses - Auto On/Off - Compatible Voice Assistant - Volume Control - Selfie - Open Ear Audio for Smart Device with Bluetooth - Blue Light Filtering</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+      
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B076DWKD5B?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&smid=A1BCXRJQ9212UU&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyT0dDMllOMzNOWTRUJmVuY3J5cHRlZElkPUEwOTMxMzAwMUhaMTU0OE5IQzdOQSZlbmNyeXB0ZWRBZElkPUEwNjMwNDE2MUpOV0VJVFYzNkZDUSZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=06013d13bc76d7120f14f647f561b66d&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B076DWKD5B&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B076DWKD5B" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">BENGOO V-4 Gaming Headset for Xbox One, PS4, PC, Controller, Noise Cancelling Over Ear Headphones with Mic, LED Light Bass Surround Soft Memory Earmuffs for PS2 Mac Sega Dreamcast PS5 Games</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+       
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B07DVFBVPF?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzUjFGWEhTNE5KNjdaJmVuY3J5cHRlZElkPUEwNDEyNDA4MVhJQU03RjdCU1BXJmVuY3J5cHRlZEFkSWQ9QTAwOTk2NjFBNDU1M0RBV1pFVTcmd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=samcodehub-20&linkId=fac3bbd6e9f23538fdde4e173f6e8590&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07DVFBVPF&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07DVFBVPF" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Wireless Digital Microscope, Skybasic 50X-1000X Magnification WiFi Portable Handheld Microscopes with Adjustable Stand HD USB Microscope Camera Compatible with iPhone Android iPad Windows Mac Computer</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+     
+
+        
+
+<a class="right-ads mt-5" style="display:block; text-align:center;"  href="https://www.amazon.com/dp/B08WYL6G1X?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExREwzUlM5M0tFWloyJmVuY3J5cHRlZElkPUEwMTIwMjQwM1JNVFlaNklQQUtaSiZlbmNyeXB0ZWRBZElkPUEwMzIyMDk1MUZCT1hJRFFBM00zRSZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=ee5ee579b2943653153edd70a9858ff6&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08WYL6G1X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08WYL6G1X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">RAPILOCK Leash Quick Release Neck Strap (Black) for GoPro Hero 9 8 7 6 5 4 3+ 3 2 1 Mounting Way Devices Such as Sony/Gamin/SJ4000/DJI/osmo Pocket. Includes 1 Adapter, 1 Buckle (Black), and 1 Strap.</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B07H8TJMX7?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzMUpNQUJNWExVMTQ1JmVuY3J5cHRlZElkPUEwOTkyMDQ1QUg0WktISlFNREZGJmVuY3J5cHRlZEFkSWQ9QTA2ODM2MjEyQ1BVVTZQNVA4VUxWJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&linkCode=li2&tag=samcodehub-20&linkId=862027d4fdda08a43e7b9a637c578f6d&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07H8TJMX7&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07H8TJMX7" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">seenda Wireless Mouse, 2.4G Noiseless Mouse with USB Receiver - Portable Computer Mice for PC, Tablet, Laptop with Windows System - Mint Green</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B07S7Y3FZT?psc=1&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExWFNJWTEyNU9GVzhRJmVuY3J5cHRlZElkPUEwMTgyODA1MVYxRUJOSklINjZJWSZlbmNyeXB0ZWRBZElkPUEwOTE4NjE3MTEzQjlWMTg4NFRKSSZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU%3D&linkCode=li2&tag=samcodehub-20&linkId=fb8000fa39b60a59bc402ff49d2465cb&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07S7Y3FZT&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07S7Y3FZT" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Staont Car Phone Holder, Anti-Slip Silicone Dashboard Car Pad Compatible with iPhone, Samsung, Android Smart Phones, GPS, KGs3 and More</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B07MQQS88Q?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVkI4RUhaVjc3RDRZJmVuY3J5cHRlZElkPUEwNTM4MjEzMVRCVEM1OUpCQzc4SSZlbmNyeXB0ZWRBZElkPUEwNjQ0NDU0M0xWR0ZaU0QwRk5CTiZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=4a661ba98bc0a6a992abf3d76710d09c&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07MQQS88Q&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07MQQS88Q" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> 
+    <p class="small">OneOdio A70 Bluetooth Over Ear Headphones, Wireless Headphones w/ 72H Playtime, Hi-Res, 3.5mm/6.35mm Wired Audio Jack for Studio Monitor & Mixing DJ Guitar AMP, Computer Laptop PC Tablet - Black</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B07SK7KQ4M?psc=1&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&smid=A2RBS86IXNN1ZI&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVkI4RUhaVjc3RDRZJmVuY3J5cHRlZElkPUEwNTM4MjEzMVRCVEM1OUpCQzc4SSZlbmNyeXB0ZWRBZElkPUEwNjU2OTUxM0dIRFpNWE5TTkRNMiZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU%3D&linkCode=li2&tag=samcodehub-20&linkId=53c1e42758471ee0579eb17777038312&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07SK7KQ4M&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07SK7KQ4M" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">NVAHVA Bluetooth Earbud 10 Hrs Playtime, Single Wireless Earphone, Mini Bluetooth Headset Hands-Free Car Headphone, Cell Phone Bluetooth Earpiece for iOS Android Smart Phones PC TV Audiobook</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B08WDRDRNX?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEySUpVVDdNQTM0Tko3JmVuY3J5cHRlZElkPUEwNzkxODMzOEhRVktMQ0g0MURDJmVuY3J5cHRlZEFkSWQ9QTA4NTg0MDZZREgxVDdVNU9YOEomd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=samcodehub-20&linkId=e69ffa1ce20425d2c5d837508fbacb69&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08WDRDRNX&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08WDRDRNX" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Arlo Essential Indoor Camera - 1080p Video with Privacy Shield, Plug-in, Night Vision, 2-Way Audio, Siren, Direct to WiFi No Hub Needed, Wireless Security, Black - VMC2040B</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B01A6D2JVI?psc=1&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVTBIOFVGV1NQMlIzJmVuY3J5cHRlZElkPUEwNzE3Njc2U0RGRlg4T0lDQTRaJmVuY3J5cHRlZEFkSWQ9QTA2OTk2MThBMkc4NEVZQkVMS0smd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&linkCode=li2&tag=samcodehub-20&linkId=5f1bdbc97a3735c88cdefd93e3068f31&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01A6D2JVI&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B01A6D2JVI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Xenvo Pro Lens Kit for iPhone and Android, Macro and Wide Angle Lens with LED Light and Travel Case</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B081DRDV4K?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExOVUxMzhKVzlSV0dIJmVuY3J5cHRlZElkPUEwMzA1MDgyVzNIOVJRREdZRUhFJmVuY3J5cHRlZEFkSWQ9QTA5MjExNzIxT0dRMFYzRkE1TjdRJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&linkCode=li2&tag=samcodehub-20&linkId=e07a6bb10acef2b758764b9c0ea99869&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B081DRDV4K&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B081DRDV4K" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">EDYELL Hat with Bluetooth Speaker Adjustable Bluetooth Hat Wireless Smart Speakerphone Cap for Outdoor Sport Baseball Cap is The Birthday Gifts for Men/Women/Boys/Girls</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B08ML44WHV?pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=4VCVWJVXAJFCV1VSG72T&pd_rd_wg=4AlYM&pd_rd_w=yXdgZ&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pd_rd_r=b5016b47-0b90-4dab-b665-22d7d23cecb0&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&smid=AJX8VSOKXK3WC&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFIUjFGTTRSTU5USUwmZW5jcnlwdGVkSWQ9QTAyNTM2OTEyMDBMV1RTSEY3NTUxJmVuY3J5cHRlZEFkSWQ9QTAyOTkwODZPU0tTV1gzMExCNTMmd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=samcodehub-20&linkId=c4396bc78dcb1c1c40d7044e888eab26&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08ML44WHV&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08ML44WHV" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Hubble MaskFone, Face Mask for Protection, Wireless Headphones & Mic, Volume Control,12H Battery, Alexa Compatible, Face Mask for Cold Weather, Working, Running, Airborne disease, Gift for men & women, Size M/L</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B09DT48V16?pd_rd_i=B09DT48V16&pd_rd_w=sSqFH&content-id=amzn1.sym.08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_p=08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_r=8CSMES4BHAG1R8BCD6V3&pd_rd_wg=k1js4&pd_rd_r=deef9ef1-11b5-488e-aa4c-7e88c0925384&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzOEFSTjRBR00xVktZJmVuY3J5cHRlZElkPUEwMzUzMzQ2M0dCNDBKVENLWlVOWiZlbmNyeXB0ZWRBZElkPUEwMTc2MTY0MThBWFU2VTNWT1FRMiZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=886dc33182363adb17dcbf980e29d657&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09DT48V16&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B09DT48V16" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">TAGRY Bluetooth Headphones True Wireless Earbuds 60H Playback LED Power Display Earphones with Wireless Charging Case IPX5 Waterproof in-Ear Earbuds with Mic for TV Smart Phone Computer Laptop Sports</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BV7FGM4Y?psc=1&pd_rd_i=B0BV7FGM4Y&pd_rd_w=sSqFH&content-id=amzn1.sym.08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_p=08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_r=8CSMES4BHAG1R8BCD6V3&pd_rd_wg=k1js4&pd_rd_r=deef9ef1-11b5-488e-aa4c-7e88c0925384&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzOEFSTjRBR00xVktZJmVuY3J5cHRlZElkPUEwMzUzMzQ2M0dCNDBKVENLWlVOWiZlbmNyeXB0ZWRBZElkPUEwODAxODE1M0pNNEFaQVFIQlg4USZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU%3D&linkCode=li2&tag=samcodehub-20&linkId=83e76262aa2d414fb75a8a1dabafa3a4&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BV7FGM4Y&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BV7FGM4Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">iJoy Sleep Headphones Bluetooth Sleep Mask with Built in Controls and Soft Speakers - Cozy Tech Gifts for Men Women Kids, Cool Gadgets and Holiday Gifts for All Ages</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B08FCLLZ7N?pf_rd_p=08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_r=8CSMES4BHAG1R8BCD6V3&pd_rd_wg=k1js4&pd_rd_w=sSqFH&content-id=amzn1.sym.08ba9b95-1385-44b0-b652-c46acdff309c&pd_rd_r=deef9ef1-11b5-488e-aa4c-7e88c0925384&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExVFA0V0FKTVRQSVVIJmVuY3J5cHRlZElkPUEwNzc4NzIzMjJEWUhXSzY2WExRTCZlbmNyeXB0ZWRBZElkPUEwNTA0MzU5MUc1UzkyNlRIV1pNVyZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=8f54e5369219e4eb29099e8a86e39698&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08FCLLZ7N&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08FCLLZ7N" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">TREBLAB X3 Pro - True Wireless Earbuds with Earhooks - 45H Battery Life, Bluetooth 5.0, IPX7 Waterproof Earbuds - TWS Bluetooth Headphones with Charging case for Sport, Running, Workout - Black</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Getting-Structured-Data-Internet-Production-ebook/dp/B08NDFJ8N5?crid=11LV91E3OZ3M4&keywords=beautiful+soup+python&qid=1684207801&sprefix=beautifulsoup%2Caps%2C329&sr=8-14&linkCode=li3&tag=samcodehub-20&linkId=c22037c0876e3b2d2f7144fc475944e8&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08NDFJ8N5&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B08NDFJ8N5" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Getting Structured Data from the Internet: Running Web Crawlers/Scrapers on a Big Data Production Scale</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Web-Data-Mining-Python-information-ebook/dp/B0BTH9X8TB?crid=11LV91E3OZ3M4&keywords=beautiful+soup+python&qid=1684207801&sprefix=beautifulsoup%2Caps%2C329&sr=8-18&linkCode=li3&tag=samcodehub-20&linkId=7566a6717df5342315b56cc98a736e43&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BTH9X8TB&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B0BTH9X8TB" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Web Data Mining with Python: Discover and extract information from the web using Python (English Edition) </p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Practical-Web-Scraping-Data-Science-ebook/dp/B07CH3CH51?crid=11LV91E3OZ3M4&keywords=beautiful+soup+python&qid=1684207801&sprefix=beautifulsoup%2Caps%2C329&sr=8-20&linkCode=li3&tag=samcodehub-20&linkId=f4d2ff7dbbdb1e6e538ee413c4f55dfb&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07CH3CH51&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B07CH3CH51" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Practical Web Scraping for Data Science: Best Practices and Examples with Python 1st ed. Edition</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Practical-Website-Scraping-Python-structured-ebook/dp/B0C1S7P6NN?pd_rd_w=XHy4N&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=1N6MZGRVAZVPXK489N7J&pd_rd_wg=d9mZw&pd_rd_r=3383ea17-8523-4d53-b894-2cada7bfc1b2&pd_rd_i=B0C1S7P6NN&psc=1&linkCode=li3&tag=samcodehub-20&linkId=a2206686782761a755494a7e59f90e55&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0C1S7P6NN&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B0C1S7P6NN" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Practical Website Scraping with Python: build web scraping scripts to download, extract and parse structured data. </p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Web-Scraping-Practical-Python-Beautiful-ebook/dp/B0C2CWH1TY?pd_rd_w=dNTOQ&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=64ADTWWP35Z7EY98XHCG&pd_rd_wg=eBrRZ&pd_rd_r=3eabb8ef-0fec-40af-915f-9dfe112501fd&pd_rd_i=B0C2CWH1TY&psc=1&linkCode=li3&tag=samcodehub-20&linkId=2cf26de825e15d6bae99820b2786a20b&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0C2CWH1TY&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li3&o=1&a=B0C2CWH1TY" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Web Scraping Practical with Python: Crawling with Scrapy, Beautiful Soup, Selenium and more.</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B08WLTQR12?pd_rd_i=B08WLTQR12&pd_rd_w=2MMf3&content-id=amzn1.sym.7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_p=7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_r=XXCEA99Z9D4HWP45MYM1&pd_rd_wg=sY64c&pd_rd_r=82494dc1-2e30-4887-8125-1a89bcf5a719&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzOVpQQzYyMTEyVzIzJmVuY3J5cHRlZElkPUEwMTk1ODUwMlNJWlRMQlRSTzkyWCZlbmNyeXB0ZWRBZElkPUEwNDkwMzgzMTJSWTYxNFkwMFBXRCZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=e88f4f417d39b97dcacdd29573bdca4d&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08WLTQR12&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08WLTQR12" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">SHHHMOUSE Silent Mouse Wireless – Computer Mouse Wireless, Mouse for Laptop, Mouse USB, Mouse for Chromebook, Mouse Cordless, Mouse Inalambrico, PC Mouse, Computer Mice, Quiet Mouse</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B08TMTFR6B?pd_rd_i=B08TMTFR6B&pd_rd_w=xaiui&content-id=amzn1.sym.7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_p=7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_r=79DS93W1MWH73QBEJ29Y&pd_rd_wg=pzqDA&pd_rd_r=4cce152a-5965-4224-82e4-c0eeb4407a72&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyMFRTREZMVDBVWE1YJmVuY3J5cHRlZElkPUEwNzYzMjA2SjVPN1pPMVc4WUwwJmVuY3J5cHRlZEFkSWQ9QTAxNzUzNTcxNEhPTUVTR0ZIUFNMJndpZGdldE5hbWU9c3BfZGV0YWlsX3RoZW1hdGljJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&linkCode=li2&tag=samcodehub-20&linkId=da9da49bf0cc7d962a31c42cab681c41&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08TMTFR6B&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B08TMTFR6B" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Raycon The Everyday Wireless Bluetooth Over Ear Headphones, with Active Noise Cancelling, Awareness Mode and Built in Microphone, IPX 4 Water Resistance, 38 Hours of Battery Life (Black)</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B089Y6R6B8?pd_rd_i=B089Y6R6B8&pd_rd_w=PNqqd&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=42T07N2RE4KY4S5VTAE3&pd_rd_wg=eLR8F&pd_rd_r=3e95e6d8-7295-45b9-9b21-26d52e8a8c49&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1&linkCode=li2&tag=samcodehub-20&linkId=ceda469e83e3b37521e2aea93df11354&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B089Y6R6B8&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B089Y6R6B8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">Arlo Essential Wired Video Doorbell - HD Video, 180° View, Night Vision, 2 Way Audio, DIY Installation (wiring required), Security Camera, Doorbell Camera, Home Security Cameras, Black - AVD1001B</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0B63R6T2M?pd_rd_i=B0B63R6T2M&pd_rd_w=wtVEN&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=9THJ4DQX3F2DH030R55B&pd_rd_wg=SApJd&pd_rd_r=1e473a1f-7a0d-4e93-9dbe-cb902ae1b13c&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE2S1ZONFlaNDExS0cmZW5jcnlwdGVkSWQ9QTA3MDkyNjUxSDhLRVRaVTVFTEYxJmVuY3J5cHRlZEFkSWQ9QTA1NTQ2NzQxMkRJSzNKR0o3QzRMJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&linkCode=li2&tag=samcodehub-20&linkId=8ce5678c575da3ad59a3590931fc37f0&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0B63R6T2M&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0B63R6T2M" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">[Upgrade] WSKEN for iPhone 14 Pro Max / iPhone 14 Pro Camera Lens Protector,[Ultra Thin Camera Sticker][Case Friendly]HD Tempered Glass Screen Protector Cover Film for 14 Pro Max / 14 Pro Accessories,Space Black</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BRKTYTVM?psc=1&pd_rd_i=B0BRKTYTVM&pd_rd_w=roCz8&content-id=amzn1.sym.08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_p=08ba9b95-1385-44b0-b652-c46acdff309c&pf_rd_r=AZXPCVPP2GHYSVHMHECA&pd_rd_wg=7tGMa&pd_rd_r=84239359-6bb4-403c-a042-03c4a6b360e6&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzR1Q3QU85RzVCNENMJmVuY3J5cHRlZElkPUEwOTU0NDQxMlpIQ0FLTkJWMTZVNiZlbmNyeXB0ZWRBZElkPUEwNTA0NTE1M0o4N1FDMVJFSjJTViZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU%3D&linkCode=li2&tag=samcodehub-20&linkId=82537439cf33d6e0554749cf58f6e232&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BRKTYTVM&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BRKTYTVM" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">PrancyBt Trucker Bluetooth Headset, Wireless Headset with Microphone for PC, Bluetooth Headset with Microphone Noise Cancelling, Mute Button, 55H Talk Time, for Cell Phones, Computer, Truck Drivers</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BPLNR3XM?psc=1&pd_rd_i=B0BPLNR3XM&pd_rd_w=wtVEN&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=9THJ4DQX3F2DH030R55B&pd_rd_wg=SApJd&pd_rd_r=1e473a1f-7a0d-4e93-9dbe-cb902ae1b13c&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE2S1ZONFlaNDExS0cmZW5jcnlwdGVkSWQ9QTA3MDkyNjUxSDhLRVRaVTVFTEYxJmVuY3J5cHRlZEFkSWQ9QTAwMzU0OThEUEw5UjRQVU1TSFQmd2lkZ2V0TmFtZT1zcF9kZXRhaWwmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&linkCode=li2&tag=samcodehub-20&linkId=da750654255d1c471be6b9908cc2d02f&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BPLNR3XM&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BPLNR3XM" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">APEXEL Macro Lens Kit for Smartphone,10X Macro Lens + CPL Filter with Multi-Function Lens Clip for iPhone 14/14Pro/14Pro Max, Samsung, Android Phone (Fits for Almost All Phone), Phone Lens Attachment.</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BDRQVL7H?psc=1&pd_rd_i=B0BDRQVL7H&pd_rd_w=wtVEN&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=9THJ4DQX3F2DH030R55B&pd_rd_wg=SApJd&pd_rd_r=1e473a1f-7a0d-4e93-9dbe-cb902ae1b13c&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUE2S1ZONFlaNDExS0cmZW5jcnlwdGVkSWQ9QTA3MDkyNjUxSDhLRVRaVTVFTEYxJmVuY3J5cHRlZEFkSWQ9QTA5MjE5NjQyRVA1NEFGNEk2SjhMJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ%3D%3D&linkCode=li2&tag=samcodehub-20&linkId=383969ac68fe6a112894cfd906c8a325&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BDRQVL7H&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BDRQVL7H" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> 
+    <p class="small">Aureday Rechargeable Selfie Light, Clip-on LED Ring Light for Phone, Laptop, Tablet and Computer, Portable Phone Light for Selfie/Video Conference/Zoom Call/Photography/Makeup/Picture</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+
+
+<a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B0BGJ2NNJ2?pd_rd_i=B0BGJ2NNJ2&pd_rd_w=dVeYA&content-id=amzn1.sym.7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_p=7b21e0c7-2d6d-4279-a40b-74d2b0593b5a&pf_rd_r=VHDH5EJQQTV7Z7AEKKFW&pd_rd_wg=ew3Ga&pd_rd_r=f07fb713-3b43-4af1-abb7-5e688a90e9ba&s=hi&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&smid=A2S6ZRGQUY8MJK&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyU0ZJT0FZOUlQVlZRJmVuY3J5cHRlZElkPUEwODY1MjM2MlRJQVEyWEdOVkJSOCZlbmNyeXB0ZWRBZElkPUEwNTU4MTU4MkhLTkdXMk5RUlFWRyZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1&linkCode=li2&tag=samcodehub-20&linkId=9f8004e112fde094e617c0bf5040caf4&language=en_US&ref_=as_li_ss_il" target="_blank">
+  <div>
+    <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BGJ2NNJ2&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BGJ2NNJ2" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <p class="small">GOLREX Bluetooth Headphones Wireless Earbuds 36Hrs Playtime Wireless Charging Case Digital LED Display Over-Ear Earphones with Earhook Waterproof Headset with Mic for Sport Running Workout Black</p>
+    <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+  </div>
+</a>
+
+</div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+<footer class="futer text-center text-white">
+<!-- Grid container -->
+<div class="container p-4">
+  <!-- Section: Social media -->
+  <section class="mb-4">
+    <!-- tiktok -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.tiktok.com/@samcodehub" target="_blank" role="button"><i class="fab fa-tiktok"></i></a>
+
+    <!-- Twitter -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/SamCodehub" target="_blank" role="button"
+      ><i class="fab fa-twitter"></i
+    ></a>
+
+    <!-- pinterest -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://ar.pinterest.com/samcodehub/" target="_blank" role="button"
+      ><i class="fab fa-pinterest"></i
+    ></a>
+
+    <!-- Instagram -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/samcodehub/?hl=es" target="_blank" role="button"
+      ><i class="fab fa-instagram"></i
+    ></a>
+
+    <!-- Linkedin -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/samcodehub/" target="_blank" role="button"
+      ><i class="fab fa-linkedin-in"></i
+    ></a>
+
+    <!-- tumblr -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.tumblr.com/blog/sam-code-hub" target="_blank" role="button"
+      ><i class="fab fa-tumblr"></i
+    ></a>
+  </section>
+  <!-- Section: Social media -->
+  <div class="text-center  text-success" id="newsletter-success"></div>
+  <div class="alert" style="display: none;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';"></span>
+    Subscription successful!
+  </div>
+<!-- Section: Form -->
+<section class="">
+<form id="contactForm2" >
+  
+  <!--Grid row-->
+  <div class="row d-flex justify-content-center">
+    <!--Grid column-->
+    <div class="col-auto">
+      
+      <p class="pt-2">
+        <strong>Sign up for our newsletter</strong>
+      </p>
+    </div>
+    <!--Grid column-->
+    
+    <!--Grid column-->
+    <div class="col-md-5 col-12">
+      <!-- Email input -->
+      <div class="form-outline form-white mb-4">
+        <input type="email" id="emailid" class="form-control" />
+        <label class="form-label" for="form5Example21">Email address</label>
+      </div>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-auto">
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-outline-light mb-4">
+        Subscribe
+      </button>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</form>
+</section>
+<!-- Section: Form -->
+<!-- Section: Text -->
+  <section class="mb-4">
+    <p>
+      SAMCODEHUB is optimized for learning and training Python programming from basic to advanced. All tutorials and projects are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. it would be a greate help if you inform us the errors you might find during your journy in SAMCODEHUB.
+    </p>
+  </section>
+  <!-- Section: Text -->
+
+ <!-- Section: Links -->
+ <section class="">
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+      <ul class="list-unstyled mb-0">
+        <li>
+          <a href="https://www.ko-fi.com/samcodehub" target="_blank" class="text-white">
+            <img src="../IMG/hco.png" alt="Coffee" style="width: 40px; height: 30px; margin-right: -5px;">
+            Buy Me A Coffee
+          </a>
+        </li>
+        <li>
+          <a href="../Challenge/challenge.html" target="_blank" class="text-white">Coding Challenge</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCMxVrec-3iTMxiEAsxTtZJg" target="_blank" class="text-white">Video Tutorial</a>
+        </li>
+        <li>
+          <a href="../About/about.html" target="_blank"  class="text-white">About Us</a>
+        </li>
+      </ul>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+      <ul  class="list-unstyled mb-0">
+        
+        <li>
+          <a href="../Terms/terms.html" target="_blank" class="text-white">Terms and Conditions</a>
+        </li>
+        <li>
+          <a href="../Privacy/privacy.html" target="_blank" class="text-white">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="mailto:samcodehub@gmail.com" class="text-white">contact us</a>
+        </li>
+        <li>
+          <a href="../FAQ/faq.html" target="_blank" class="text-white">FAQ</a>
+        </li>
+        
+      </ul>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</section>
+<!-- Section: Links -->
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.558);">
+  © 2023 Copyright:
+  <a class="text-white" href="../main.html">samcodehub.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="bs4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script type='text/javascript' src='//pl19803565.highrevenuegate.com/ff/58/83/ff5883adc68702e52bb3c7953ffb3fe9.js'></script>
+</body>
+</html>
