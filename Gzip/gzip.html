@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VP3VDZGZEM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VP3VDZGZEM');
+</script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Learn about Python Gzip and its various applications. Follow the beginner's guide to understand compression and decompression techniques. Step-by-step instructions are provided to help you install and use Gzip in your Python code. Additionally, explore how to compress PDF files to ZIP files using the Gzip and Shutil modules. Enhance your file management capabilities with Python's Gzip functionality.">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="gzip.css" />
+    <link rel="icon" type="image/x-icon" href="../IMG/s.png">
+    <title>Python Gzip: Compression, Install & PDF Compress Usage Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <script src="https://kit.fontawesome.com/e517e55e99.js" crossorigin="anonymous"></script>
+<!-- Meta Tags for Social Sharing -->
+<meta property="og:title" content="Python Gzip: Compression, Install & PDF Compress Usage Guide">
+<meta property="og:description" content="Learn about Python Gzip and its various applications. Follow the beginner's guide to understand compression and decompression techniques. Step-by-step instructions are provided to help you install and use Gzip in your Python code. Additionally, explore how to compress PDF files to ZIP files using the Gzip and Shutil modules. Enhance your file management capabilities with Python's Gzip functionality.">
+<meta property="og:image" content="https://www.samcodehub.com/IMG/s.png">
+<meta property="og:url" content="https://samcodehub.com/Gzip/gzip.html">
+<meta name="twitter:title" content="Python Gzip: Compression, Install & PDF Compress Usage Guide">
+<meta name="twitter:description" content="Learn about Python Gzip and its various applications. Follow the beginner's guide to understand compression and decompression techniques. Step-by-step instructions are provided to help you install and use Gzip in your Python code. Additionally, explore how to compress PDF files to ZIP files using the Gzip and Shutil modules. Enhance your file management capabilities with Python's Gzip functionality.">
+<meta name="twitter:image" content="https://www.samcodehub.com/IMG/s.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://samcodehub.com/Gzip/gzip.html">    
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("EPqtEwgLtyLECUuik");
+      })();
+    </script>
+</head>
+<body>
+  <!--HEADER-->
+  <nav class="navbar sticky-top">
+    <div class="container-fluid">
+      <button class="nav-btn open-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav nav-black">
+        <div class="nav nav-purple">
+          <div class="nav nav-white">
+            <button class="nav-btn close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="list">
+              <li><a class="hover-underline-animation" href="../main.html">Home</a></li>
+              <li><a class="hover-underline-animation" href="https://www.youtube.com/channel/UCMxVrec-3iTMxiEAsxTtZJg" target="_blank">YouTube Channel</a></li>
+              <li>Contacts:</li>
+              <li>
+                <ul>
+                  <li><a class="hover-underline-animation" href="https://twitter.com/SamCodehub" target="_blank">Twitter</a></li>
+                  <li><a class="hover-underline-animation" href="https://www.instagram.com/samcodehub/" target="_blank">Instagram</a></li>
+                  <li><a class="hover-underline-animation" href="https://www.tiktok.com/@samcodehub" target="_blank">Tiktok</a></li>
+                  <li><a class="hover-underline-animation" href="mailto:samcodehub@gmail.com">Mail</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <a class="navbar-brand text-white ms-5" href="../main.html">SAMCODEHUB</a>
+      </div>
+  </nav>
+  
+
+    
+  <div class="container-fluid text-dark bg-light mb-5">
+    <div class="container">
+        <div class="row">
+          <div class="mt-3 text-center d-none d-sm-block">
+            <script type="text/javascript">
+              atOptions = {
+                'key' : '1b2faf8c56912cbb33c75a4f2c4147a0',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+              document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/1b2faf8c56912cbb33c75a4f2c4147a0/invoke.js"></scr' + 'ipt>');
+            </script>
+          </div>
+          
+    
+    
+          <div class="mt-3 text-center d-block d-sm-none">
+            <script type="text/javascript">
+              atOptions = {
+                'key' : '5f8d3ca7e2522cae1c98e57ae1a52fc4',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+              document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/5f8d3ca7e2522cae1c98e57ae1a52fc4/invoke.js"></scr' + 'ipt>');
+            </script>
+          </div>
+                
+                <div class="col-9  text-break">
+                  <h1 class="mt-3">Python Gzip: A Beginner's Guide to Compression and Decompression</h1>
+<p class="mt-5"><strong>Gzip</strong> compression is widely used for reducing the file size and saving storage space on servers, computers, and other storage devices. The <strong>Gzip</strong> module in Python provides a range of functions to perform <strong>Gzip compression</strong>  and <strong>decompression</strong> tasks, making it a useful tool for developers who need to work with compressed files. The module also allows you to create and work with compressed files on the fly, without needing to store them on disk.</p>
+
+<p class="mt-4">When working with Gzip in Python, you can use the <strong>open()</strong> function to open a compressed file, and the <strong>read()</strong> and <strong>write()</strong> methods to read and write compressed data. The Gzip module also provides additional functionality for working with compressed data in memory, including the <strong>compress()</strong> and <strong>decompress()</strong> methods, which can be used to compress and decompress data on the fly.</p>
+<p class="mt-4">Overall, the Gzip module in Python is a powerful and flexible tool for working with compressed files, and is widely used in the development of applications and systems that require efficient file compression and decompression. Whether you're working with compressed data in memory, or reading and writing compressed files, the Gzip module provides a range of functions and methods to help you get the job done quickly and easily.</p>
+
+
+
+
+<div class="mt-5 text-center">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '2be6d81d479aab6f66c74305d58a3261',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/2be6d81d479aab6f66c74305d58a3261/invoke.js"></scr' + 'ipt>');
+  </script>
+</div>
+
+<h2 class="mt-5">Python Gzip: A Step-by-Step Guide to Install and Use Gzip in Your Code</h2>
+<p class="mt-5">You do not need to install <strong>Gzip</strong> separately in Python as it is included in the standard library. This means that you can use Gzip functionality in Python without any additional installation or setup. The gzip module is part of the standard library, so it should be available by default in your Python installation.</p>
+
+<p class="mt-4">You can import the <strong>gzip</strong> module in your Python code to use its functionality for compressing and decompressing files. Just make sure that you are using a version of Python that includes the gzip module.</p>
+
+
+<p class="mt-5">To use <strong>Gzip</strong> in Python, you can follow these steps:</p>
+<ol class="mt-4">
+  <li class="mt-3">Import the gzip module:</li>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import gzip                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+ 
+  <li class="mt-3">To compress a file, you can use the <mark><strong>gzip.open()</strong></mark> function in write mode. For example, to compress a text file named <mark><strong>example.txt</strong></mark> and save it as <mark><strong>example.txt.gz</strong></mark>, you can do the following:</li>
+
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">with open('example.txt', 'rb') as f_in:
+    with gzip.open('example.txt.gz', 'wb') as f_out:
+        f_out.write(f_in.read())                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<p class="mt-4">The above code reads the contents of <mark><strong>example.txt</strong></mark> in binary mode <mark><strong>('rb')</strong></mark>, compresses it, and writes the compressed data to <mark><strong>example.txt.gz</strong></mark> in binary mode <mark><strong>('wb')</strong></mark>.</p>
+  <li class="mt-3">To decompress a file, you can use the <mark><strong>gzip.open()</strong></mark> function in read mode. For example, to decompress the <mark><strong>example.txt.gz</strong></mark> file and save it as <mark class="text-break"><strong>example_decompressed.txt</strong></mark>, you can do the following:</li>
+
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">with gzip.open('example.txt.gz', 'rb') as f_in:
+    with open('example_decompressed.txt', 'wb') as f_out:
+        f_out.write(f_in.read())                          
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+  
+</ol>
+<p class="mt-4 text-break">The above code reads the compressed data from <mark><strong>example.txt.gz</strong></mark> in binary mode <mark><strong>('rb')</strong></mark>, decompresses it, and writes the decompressed data to <mark class="text-break"><strong>example_decompressed.txt</strong></mark> in binary mode <mark><strong>('wb')</strong></mark>.</p>
+
+<p class="mt-4">Note that when you write compressed data to a file using <mark><strong>gzip.open()</strong></mark>, it automatically adds the <mark><strong>.gz</strong></mark> extension to the file name.</p>
+<div class="mt-5">
+  <script async="async" data-cfasync="false" src="//pl19803482.highrevenuegate.com/48f614a090a4554e6545c45cb2bade8a/invoke.js"></script>
+<div id="container-48f614a090a4554e6545c45cb2bade8a"></div>
+</div>
+
+<h2 class="mt-5">Python PDF Compression: How to Compress PDF Files to ZIP Files with Gzip and Shutil Modules</h2>
+<p class="mt-5">In Python, we have the <strong>gzip</strong> and <strong>shutil</strong> modules that provide a simple and easy-to-use way to compress files. The <strong>gzip</strong> module allows us to compress a single file while the <strong>shutil</strong> module provides additional functionality for compressing multiple files and entire directories.</p>
+<p class="mt-4">To compress a file using the <strong>gzip</strong> module, we first need to import the module and open the file we want to compress. We then create a gzip file object and write the contents of the original file to the gzip file. Finally, we close both the original file and the gzip file.</p>
+<p class="mt-4">With the <strong>shutil</strong> module, we can compress multiple files or entire directories into a single compressed file. This is achieved by calling the <strong>shutil.make_archive()</strong> function with the appropriate parameters. The function takes in the base name of the archive file, the type of archive, the root directory to compress, and the format of the archive file.</p>
+
+
+
+
+<p class="mt-4">Overall, using Python to compress files using the <strong>gzip</strong> and <strong>shutil</strong> modules is a simple and efficient way to optimize storage and reduce file size. Whether you're compressing a single file or an entire directory, Python has the tools you need to get the job done quickly and easily.</p>
+
+<p class="mt-1">Here's a breakdown of what each line does:</p>
+<p class="mt-5"><strong>import gzip</strong> - This line imports the gzip library, which provides a way to compress and decompress files using the gzip format.</p>
+<p class="mt-0"><strong>import shutil</strong> - This line imports the shutil module, which provides a way to perform high-level file operations like copying, moving, and deleting files.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">import gzip
+import shutil
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+<div class="mt-5 text-center">
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0C32QRFX4&asins=B0C32QRFX4&linkId=64a620777580ca93a0007a27dc14a622&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B08911JGGW&asins=B08911JGGW&linkId=42808d73d54164c81bbfcd175ac019a0&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B088ZN47V8&asins=B088ZN47V8&linkId=b9afe036eaf96d6b7e783b276389bfa8&show_border=true&link_opens_in_new_window=true"></iframe>
+
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=samcodehub-20&language=en_US&marketplace=amazon&region=US&placement=B0BW3YNVG1&asins=B0BW3YNVG1&linkId=b8d04e3c61789373dfff198ca4a87863&show_border=true&link_opens_in_new_window=true"></iframe>
+
+</div>
+
+<p class="mt-5"><strong>with open('demo.pdf', 'rb') as f_input</strong>: - This line opens the file demo.pdf in binary mode ('rb') for reading ('r'), and assigns it to the variable f_input. The with statement ensures that the file is properly closed after it is read.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">with open('demo.pdf', 'rb') as f_input:
+    #with gzip.open('demo.pdf.gz', 'wb') as f_output:
+        #shutil.copyfileobj(f_input,f_output)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+
+<p class="mt-5"><strong>with gzip.open('demo.pdf.gz', 'wb') as f_output</strong>: - This line opens a new file demo.pdf.gz in gzip format, in binary mode ('wb') for writing ('w'), and assigns it to the variable f_output. The with statement ensures that the file is properly closed after it is written.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">#with open('demo.pdf', 'rb') as f_input:
+    with gzip.open('demo.pdf.gz', 'wb') as f_output:
+        #shutil.copyfileobj(f_input,f_output)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+
+<p class="mt-5"><strong>shutil.copyfileobj(f_input,f_output)</strong> - This line copies the contents of the f_input file object to the f_output file object. This effectively compresses the contents of the demo.pdf file and writes them to demo.pdf.gz.</p>
+<div id="code-container"class="bg-dark text-white pt-3 ps-3 pe-3">
+<pre>
+<code class="language-Python">#with open('demo.pdf', 'rb') as f_input:
+  #with gzip.open('demo.pdf.gz', 'wb') as f_output:
+      shutil.copyfileobj(f_input,f_output)
+</code>
+</pre>
+<button id="copy" type="button" onclick="copyCode(this)" class="btn btn-outline-secondary"><i class="fa-regular fa-clipboard"></i></button>
+</div>
+
+
+
+<p class="mt-4">Overall, this code snippet demonstrates a simple way to compress a file using <strong></strong>gzip compression in Python, using the <strong>gzip</strong> library and the <strong>shutil</strong> module.</p>
+
+
+
+
+
+<h4 class="mt-5">You can watch the video below:</h4>
+<div class="ratio ratio-16x9 mt-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/oQuxC7fYapw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+
+<!----------------- Comments...-------------- -->
+<div class="mt-5">
+  <script async="async" data-cfasync="false" src="//pl19803483.highrevenuegate.com/6e23a23963bb7aab641dba5ed180d8b6/invoke.js"></script>
+<div id="container-6e23a23963bb7aab641dba5ed180d8b6"></div>
+</div>
+
+<div class="site-update alert-info mt-5 py-3 px-3" role="alert">
+  <h4 class="alert-heading">Site Update in Progress...</h4>
+  <p>We're working hard to keep our site up to date with the latest information. Please check back soon for new and improved content!</p>
+</div>
+<h3 class="mt-5">Comments...</h3>
+<div class="comment mt-3 px-3 py-3">
+  
+  <form id="contactForm"  onsubmit="return sendMail();">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="messageTextarea" class="form-label">Your Comments</label>
+      <textarea class="form-control" name="message"  id="message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class=" mt-4" id="messages">
+                  </div>
+</div>
+
+<!----------------- Comments ENDS HERE...-------------- -->
+
+
+
+        
+      </div>
+      <div id="ads" class="col-3 mt-5 d-none d-sm-block text-break border-start">
+        <div class="text-center  mb-5">
+          <a href=""><img alt="banner" src="https://landings-cdn.adsterratech.com/referralBanners/gif/160x600_adsterra_reff.gif" /></a>
+        </div>
+                 
+        
+        <div class="text-center mt-5 mb-5">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '6e0edb924a4d1f796c691953555afee5',
+              'format' : 'iframe',
+              'height' : 300,
+              'width' : 160,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/6e0edb924a4d1f796c691953555afee5/invoke.js"></scr' + 'ipt>');
+          </script>
+        </div>
+        
+        <div class="text-center mt-5 mb-5">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '60d187c01f46598efa9231f38aa5470f',
+              'format' : 'iframe',
+              'height' : 600,
+              'width' : 160,
+              'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/60d187c01f46598efa9231f38aa5470f/invoke.js"></scr' + 'ipt>');
+          </script>
+        
+        </div>
+        
+        <script async="async" data-cfasync="false" src="//pl19803213.highrevenuegate.com/09dd4590666c6548bca106c3143299ba/invoke.js"></script>
+        <div id="container-09dd4590666c6548bca106c3143299ba"></div>
+
+       
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Controller-Gammeefy-Adjustable-Compatible-Programmable/dp/B0B9MYYC3X?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B0B9MYYC3X&psc=1&linkCode=li2&tag=samcodehub-20&linkId=f857923719eb37e7ca5845a0f36aa980&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0B9MYYC3X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0B9MYYC3X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Switch Controller, Gammeefy Wireless Switch Pro Controller for Nintendo Switch/Lite/OLED, 9 Color Adjustable LED Switch Remote Compatible with Windows PC/Android/IOS with Programmable Function (White)</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+       
+
+        
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Tempo-30-Bluetooth-Sweatproof-Headphones/dp/B09DLF7DQY?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B09DLF7DQY&psc=1&linkCode=li2&tag=samcodehub-20&linkId=c5dfad0cb00ba052c7500a54daeb295d&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09DLF7DQY&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B09DLF7DQY" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Tempo 30 Rose Gold Wireless Earbuds for Small Ears Women, Pink Bluetooth Earbuds for Small Ear Canals, Loud Bass Ear Buds Wireless Bluetooth Earbuds for iPhone, Android Earbuds Wireless Bluetooth Mic</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+
+    
+
+
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Rechargeable-Handheld-Portable-Operated-Flashlight/dp/B07QK9C9KT?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B07QK9C9KT&psc=1&linkCode=li2&tag=samcodehub-20&linkId=c78663ae9ef49c4ef7113b8a2758d492&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07QK9C9KT&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US"/><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B07QK9C9KT" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">JISULIFE Handheld Mini Fan, 3 IN 1 Hand Fan, Portable USB Rechargeable Small Pocket Fan, Battery Operated Fan [14-21 Working Hours] with Power Bank, Flashlight Feature for Women,Travel,Outdoor-Pink, 1 Count (Pack of 1)</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+
+       
+
+
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/LEVN-Bluetooth-Microphone-Cancelling-Headphones/dp/B09NRK5668?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B09NRK5668&psc=1&linkCode=li2&tag=samcodehub-20&linkId=2ee6c00e7a2f1513b0456dda39d9c200&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09NRK5668&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B09NRK5668" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">LEVN Bluetooth Headset with Microphone, Trucker Bluetooth Headset with AI Noise Cancelling & Mute Button, Wireless On-Ear Headphones 60 Hrs Working Time, for Trucker Home Office Remote Work Zoom</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+      
+
+
+
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Logitech-C920x-Pro-HD-Webcam/dp/B085TFF7M1?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B085TFF7M1&psc=1&linkCode=li2&tag=samcodehub-20&linkId=586c2f11c9d9bb570c52e6394ce6fec7&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B085TFF7M1&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B085TFF7M1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Logitech C920x HD Pro Webcam, Full HD 1080p/30fps Video Calling, Clear Stereo Audio, HD Light Correction, Works with Skype, Zoom, FaceTime, Hangouts, PC/Mac/Laptop/Macbook/Tablet - Black</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+     
+
+
+
+
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/CushZone-Adjustable-Strap-Chair-Cushions-Wheelchair-Black/dp/B0BFPJ5VR3?pd_rd_w=cU0XS&content-id=amzn1.sym.2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_p=2ae4ccb1-7034-4114-8654-5ba995870d70&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=hsiSF&pd_rd_r=406affd9-f98b-4adc-b2e5-8f71b2b99436&pd_rd_i=B0BFPJ5VR3&psc=1&linkCode=li2&tag=samcodehub-20&linkId=0e122c4aa34386c5614fc0ba243ffb4d&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BFPJ5VR3&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BFPJ5VR3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> 
+            <p class="small">CushZone Seat Cushion, Lumbar Support Pillow with Adjustable Strap-Chair Cushions for Sciatica Pain Relief-with Washable Cover Memory Foam for Car, Travel and Wheelchair-Black</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+    
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/dp/B09MMTHMVW?psc=1&pd_rd_i=B09MMTHMVW&pd_rd_w=BAXC2&content-id=amzn1.sym.f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_p=f734d1a2-0bf9-4a26-ad34-2e1b969a5a75&pf_rd_r=77CQ8KNZHAC9WZ1AB1DE&pd_rd_wg=RJnmJ&pd_rd_r=968f0659-02db-45ec-9def-f54e0e15415e&s=pc&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&linkCode=li2&tag=samcodehub-20&linkId=6d1907938611c41e05b1a5bc99384c81&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09MMTHMVW&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B09MMTHMVW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Censprin USB Computer Mouse Wired, Silent Click Corded Mouse 3-Button Wired Optical Mouse, Office and Home Mice, Ergonomic Shape for Windows Computers, Macs, iPad, PC and Laptops</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+    
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/Wireless-Controller-Samsung-Android-smartphone-Television/dp/B0BWYHRQVZ?pd_rd_w=CjnNm&content-id=amzn1.sym.f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_p=f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=A1tco&pd_rd_r=9f34905e-789d-479a-949f-b5eed54ee5d9&pd_rd_i=B0BWYHRQVZ&th=1&linkCode=li2&tag=samcodehub-20&linkId=55b17396f91456f7c51b59e56ad8453e&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BWYHRQVZ&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0BWYHRQVZ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">Guil Vim Mobile Wireless game Controller for iPhone 14/14Plus/13 /13Pro /12/12 Pro/11/ 11pro Max Samsung Galaxy 22/22/21/20 One Plus, TCL LG, Tablet,Android smartphone PC (BLACK)</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+
+
+
+
+
+        <a class="right-ads mt-5" style="display:block; text-align:center;" href="https://www.amazon.com/MOSISO-Protective-Shoulder-Compatible-Repellent/dp/B0892YNNF3?pd_rd_w=CjnNm&content-id=amzn1.sym.f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_p=f5690a4d-f2bb-45d9-9d1b-736fee412437&pf_rd_r=616X7959TVGZDPK8PT2Y&pd_rd_wg=A1tco&pd_rd_r=9f34905e-789d-479a-949f-b5eed54ee5d9&pd_rd_i=B0892YNNF3&psc=1&linkCode=li2&tag=samcodehub-20&linkId=ccff782c924a7166fae49c4687bef927&language=en_US&ref_=as_li_ss_il" target="_blank">
+          <div>
+            <img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0892YNNF3&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=samcodehub-20&language=en_US" /><img src="https://ir-na.amazon-adsystem.com/e/ir?t=samcodehub-20&language=en_US&l=li2&o=1&a=B0892YNNF3" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <p class="small">MOSISO 360 Protective Laptop Shoulder Bag Compatible with MacBook Air/Pro,13-13.3 inch Notebook,Compatible with MacBook Pro 14 2023-2021 A2779 M2 A2442 M1,Matching Color Sleeve with Belt, Slate Gray</p>
+            <button class="btn btn-warning rounded-pill amazon-btn" type="button">Buy Now</button>
+          </div>
+        </a>
+
+    
+    
+    </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+<footer class="futer text-center text-white">
+<!-- Grid container -->
+<div class="container p-4">
+  <!-- Section: Social media -->
+  <section class="mb-4">
+    <!-- tiktok -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.tiktok.com/@samcodehub" target="_blank" role="button"><i class="fab fa-tiktok"></i></a>
+
+    <!-- Twitter -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/SamCodehub" target="_blank" role="button"
+      ><i class="fab fa-twitter"></i
+    ></a>
+
+    <!-- pinterest -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://ar.pinterest.com/samcodehub/" target="_blank" role="button"
+      ><i class="fab fa-pinterest"></i
+    ></a>
+
+    <!-- Instagram -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/samcodehub/?hl=es" target="_blank" role="button"
+      ><i class="fab fa-instagram"></i
+    ></a>
+
+    <!-- Linkedin -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/samcodehub/" target="_blank" role="button"
+      ><i class="fab fa-linkedin-in"></i
+    ></a>
+
+    <!-- tumblr -->
+    <a class="btn btn-outline-light btn-floating m-1" href="https://www.tumblr.com/blog/sam-code-hub" target="_blank" role="button"
+      ><i class="fab fa-tumblr"></i
+    ></a>
+  </section>
+  <!-- Section: Social media -->
+  <div class="text-center  text-success" id="newsletter-success"></div>
+  <div class="alert" style="display: none;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';"></span>
+    Subscription successful!
+  </div>
+<!-- Section: Form -->
+<section class="">
+<form id="contactForm2" >
+  
+  <!--Grid row-->
+  <div class="row d-flex justify-content-center">
+    <!--Grid column-->
+    <div class="col-auto">
+      
+      <p class="pt-2">
+        <strong>Sign up for our newsletter</strong>
+      </p>
+    </div>
+    <!--Grid column-->
+    
+    <!--Grid column-->
+    <div class="col-md-5 col-12">
+      <!-- Email input -->
+      <div class="form-outline form-white mb-4">
+        <input type="email" id="emailid" class="form-control" />
+        <label class="form-label" for="form5Example21">Email address</label>
+      </div>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-auto">
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-outline-light mb-4">
+        Subscribe
+      </button>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</form>
+</section>
+<!-- Section: Form -->
+<!-- Section: Text -->
+  <section class="mb-4">
+    <p>
+      SAMCODEHUB is optimized for learning and training Python programming from basic to advanced. All tutorials and projects are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. it would be a greate help if you inform us the errors you might find during your journy in SAMCODEHUB.
+    </p>
+  </section>
+  <!-- Section: Text -->
+
+ <!-- Section: Links -->
+ <section class="">
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+      <ul class="list-unstyled mb-0">
+        <li>
+          <a href="https://www.ko-fi.com/samcodehub" target="_blank" class="text-white">
+            <img src="../IMG/hco.png" alt="Coffee" style="width: 40px; height: 30px; margin-right: -5px;">
+            Buy Me A Coffee
+          </a>
+        </li>
+        <li>
+          <a href="../Challenge/challenge.html" target="_blank" class="text-white">Coding Challenge</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCMxVrec-3iTMxiEAsxTtZJg" target="_blank" class="text-white">Video Tutorial</a>
+        </li>
+        <li>
+          <a href="../About/about.html" target="_blank"  class="text-white">About Us</a>
+        </li>
+      </ul>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+      <ul  class="list-unstyled mb-0">
+        
+        <li>
+          <a href="../Terms/terms.html" target="_blank" class="text-white">Terms and Conditions</a>
+        </li>
+        <li>
+          <a href="../Privacy/privacy.html" target="_blank" class="text-white">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="mailto:samcodehub@gmail.com" class="text-white">contact us</a>
+        </li>
+        <li>
+          <a href="../FAQ/faq.html" target="_blank" class="text-white">FAQ</a>
+        </li>
+        
+      </ul>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</section>
+<!-- Section: Links -->
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.558);">
+  © 2023 Copyright:
+  <a class="text-white" href="../main.html">samcodehub.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="gzip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script type='text/javascript' src='//pl19803565.highrevenuegate.com/ff/58/83/ff5883adc68702e52bb3c7953ffb3fe9.js'></script>
+</body>
+</html>
